@@ -78,7 +78,7 @@
         evt.preventDefault();
         const formData = new FormData(document.querySelector('.login-form'));
         const formEmail = formData.get('email');
-        window.dataLayer.push({'user_id': formEmail, 'event': 'login'});
+        window.dataLayer.push({'person_email': formEmail, 'event': 'login'});
         console.log('Logged In');
       };
        
