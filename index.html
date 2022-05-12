@@ -87,8 +87,8 @@
         const formData = new FormData(document.querySelector('.event-form'));
         const formProduct = formData.get('product');
         const formProductQty = formData.get('product-qty');
-        window.dataLayer.push({'product_name': formProduct, 'event': 'send_event'}, {'product_qty': formProductQty, 'event': 'send_event'});
-        console.log('Sent Event');
+        window.dataLayer.push({'product_name': formProduct, 'event': 'send_event'}, {'product_qty': formProductQty, 'event': 'purchase'});
+        console.log('Product Purchased');
       };
        
        const onUpdateClick = (evt) => {
