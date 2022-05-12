@@ -44,12 +44,12 @@
     <h2>Profile update form:</h2>
     <form class="profile-form" id="profile-form">
       <div>
-        <label for="property">Your first name: </label>
-        <input type="text" name="property" id="first-name" required>
+        <label for="firstName">Your first name: </label>
+        <input type="text" name="firstName" id="first-name" required>
       </div>
       <div>
         <label for="lastName">Your Last name: </label>
-        <input type="text" name="property" id="last-name" required>
+        <input type="text" name="lastName" id="last-name" required>
       </div>
       <div>
         <input type="submit" value="Update Profile">
@@ -86,7 +86,7 @@
         evt.preventDefault();
         const formData = new FormData(document.querySelector('.event-form'));
         const formProduct = formData.get('product');
-        const formProductQty = formData.get('product-qty');
+        const formProductQty = formData.get('product_qty');
         window.dataLayer.push({'product_name': formProduct, 'event': 'purchase'}, {'product_qty': formProductQty, 'event': 'purchase'});
         console.log('Product Purchased');
       };
@@ -94,9 +94,9 @@
        const onUpdateClick = (evt) => {
         evt.preventDefault();
         const formData = new FormData(document.querySelector('.profile-form'));
-        const formProp1 = formData.get('first-name');
-        const formProp2 = formData.get('last-name');
-        window.dataLayer.push({'first_name': formProp1, 'event': 'update_profile'}, {'last_name': formProp2, 'event': 'update_profile'});
+        const formFirst = formData.get('first-name');
+        const formLast = formData.get('last-name');
+        window.dataLayer.push({'first_name': formFirst, 'event': 'update_profile'}, {'last_name': formLast, 'event': 'update_profile'});
         console.log('Updated Profile');
       };
 
