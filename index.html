@@ -45,11 +45,11 @@
     <form class="profile-form" id="profile-form">
       <div>
         <label for="firstName">Your first name: </label>
-        <input type="text" name="firstName" id="first-name" required>
+        <input type="text" name="firstName" id="firstName" required>
       </div>
       <div>
         <label for="lastName">Your Last name: </label>
-        <input type="text" name="lastName" id="last-name" required>
+        <input type="text" name="lastName" id="lastName" required>
       </div>
       <div>
         <input type="submit" value="Update Profile">
@@ -94,8 +94,8 @@
        const onUpdateClick = (evt) => {
         evt.preventDefault();
         const formData = new FormData(document.querySelector('.profile-form'));
-        const formFirst = formData.get('first-name');
-        const formLast = formData.get('last-name');
+        const formFirst = formData.get('firstName');
+        const formLast = formData.get('lastName');
         window.dataLayer.push({'first_name': formFirst, 'event': 'update_profile'}, {'last_name': formLast, 'event': 'update_profile'});
         console.log('Updated Profile');
       };
@@ -107,7 +107,6 @@
       const eventForm = document.querySelector('.event-form');
       eventForm.addEventListener('submit', onSendClick);
     </script>
-    
    
   </body>
 </html>
