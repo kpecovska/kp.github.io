@@ -58,7 +58,7 @@
     
     <hr>
     
-    <h2>Send event form (event = purchasealex):</h2>
+    <h2>Send event form (event = purchaseProduct):</h2>
      <form class="event-form" id="event-form">
        <div>
         <label for="product">Product Name: </label>
@@ -66,7 +66,7 @@
       </div>
        <div>
         <label for="product_qty">Quantity: </label>
-        <input type="text" name="product" id="product_qty" required>
+        <input type="text" name="product_qty" id="product_qty" required>
       </div>
       <div>
         <input type="submit" value="Send Event">
@@ -87,7 +87,7 @@
         const formData = new FormData(document.querySelector('.event-form'));
         const formProduct = formData.get('product');
         const formProductQty = formData.get('product-qty');
-        window.dataLayer.push({'product_name': formProduct, 'event': 'send_event'}, {'product_qty': formProductQty, 'event': 'purchase'});
+        window.dataLayer.push({'product_name': formProduct, 'event': 'purchase'}, {'product_qty': formProductQty, 'event': 'purchase'});
         console.log('Product Purchased');
       };
        
