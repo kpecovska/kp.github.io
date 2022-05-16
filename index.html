@@ -72,6 +72,15 @@
         <input type="submit" value="Send Event">
       </div>
     </form>
+	  
+    <hr>
+
+    <h2>Forget person</h2>
+     <form class="event-form" id="forget-form">  
+	<div>
+        <input type="submit" value="Forget session">
+      </div>
+    </form>
 
      <script>
       const onLoginFormSubmit = (evt) => {
@@ -99,6 +108,12 @@
         window.dataLayer.push({'first_name': formFirst, 'last_name': formLast, 'event': 'update_profile'});
         console.log('Updated Profile');
 		      };
+	     
+	const onForgetClick = (evt) => {
+          evt.preventDefault();
+          window.dataLayer.push({'event': 'forget_session'});
+          console.log('Forgot Session');
+		     };
 
       const loginForm = document.querySelector('.login-form');
       loginForm.addEventListener('submit', onLoginFormSubmit);
@@ -106,6 +121,9 @@
       profileForm.addEventListener('submit', onUpdateClick);
       const eventForm = document.querySelector('.event-form');
       eventForm.addEventListener('submit', onSendClick);
+	const eventForm = document.querySelector('.forget-form');
+      eventForm.addEventListener('submit', onForgetClick);
+	     
     </script>
 
   </body>
