@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<title>Magic Shop. Catalog</title>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta content="utf-8" http-equiv="encoding" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="text/javascript" src="utils.js"></script>
+  <script src="../src/load.js"></script>
+  <script>
+(function(e,t,n,o){e.PeopleEventsObject=o;e[o]=e[o]||{init:function(t){e[o].apiKey=t},
+setPerson:function(t,n){e[o].person=t;e[o].personTtl=n},
+forgetPerson:function(){e[o].toForgetPerson=true},
+track:function(){(e[o].q=e[o].q||[]).push(arguments)},
+updatePerson:function(t){e[o].personToUpdate={person:t}},
+appendToList:function(t,n){e[o].attributeToAppend={attributeName:t,attribute:n}}};
+var r=t.createElement("script");
+var s=t.getElementsByTagName("script")[0];r.async=1;r.src=n;s.parentNode.insertBefore(r,s)})
+(window,document,'https://s3.eu-central-1.amazonaws.com/portal-cdn-production/people-events-sdk/pe.latest-2.js','pe');
+
+pe.init('b87807b4a434e95c189d648341974633-d99fcb28-b9c2-41f6-a504-8d8674fb0a3a');
+
+  
+  //IO all_products_kp_io  pe.init('daed23af72e50871b3874451f6e3d872-14439fd4-6340-4d2d-b4f9-936c694346a9');
+  //PROD all_products_kp
+   //pe.init('2402de29a04dc00a793e7967dbed0ef6-9efde785-4fde-480f-b232-bf922d32f8c7');
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="fake-counter"></div>
+    <a class="delink" href="./shop.html">
+      <h1>Magic shop</h1>
+    </a>
+    <div class="counter">
+      <a class="delink" id="cart" href="./checkout.html"></a>
+    </div>
+  </header>
+  <article class="shop-content" id="shop">
+    <div class="items-row">
+      <div class="item-container">
+        <div class="item"><a href="./products/1.html"><img class="image" src="images/hat01.jpg" alt="tophat" /></a>
+        </div>
+        <div>$52</div>
+        <button class="button-add" type="button" onclick="addToCart('tophat', 52)">
+          Add to cart
+        </button>
+      </div>
+      <div class="item-container">
+        <div class="item"><a href="./products/2.html"><img class="image" src="images/hat02.jpg" alt="bowlhat" /></a>
+        </div>
+        <div>$47</div>
+        <button class="button-add" type="button" onclick="addToCart('bowlhat', 47)">
+          Add to cart
+        </button>
+      </div>
+      <div class="item-container">
+        <div class="item"><a href="./products/3.html"><img class="image" src="images/hat03.jpg" alt="donegal" /></a>
+        </div>
+        <div>$33</div>
+        <button class="button-add" type="button" onclick="addToCart('donegal', 33)">
+          Add to cart
+        </button>
+      </div>
+      <div class="item-container">
+        <div class="item"><a href="./products/4.html"><img class="image" src="images/hat04.jpg" alt="fedora" /></a>
+        </div>
+        <div>$41.99</div>
+        <button class="button-add" type="button" onclick="addToCart('fedora', 41)">
+          Add to cart
+        </button>
+      </div>
+ 
+    </div>
+  </article>
+  <div class="item-container">
+       <div>
+        <button class="button-add" type="button" onclick="forgetPers()">
+          Forget person
+        </button>
+
+        <button class="button-add" type="button" onclick="goToRegistr()">
+          Go to Registration form
+        </button> 
+      </div>
+</div>
+
+  <script>
+    //const user = getUser();
+    //pe.setPerson();
+    pe.setPerson({ phone: user.phone}, 2400 );
+    //pe.setPerson({ phone: user.phone });
+    //pe.setPerson({ pushRegId: person.pushregid });
+
+    //updateCartView('cart');
+    //pe.track('Registration', { email: person.email, phone: person.phone });
+
+    function addToCart(itemName, price) {
+      addItemToCart(itemName, price);
+      //updateCartView('cart');//
+      //pe.updatePerson({ firstName: person.firstName, lastName: person.lastName}); 
+      pe.track('addtocart', { item: itemName, price: price, quantity: 1 });
+      //pe.appendToList('cart', { item: itemName, price: price, quantity: 1 } );
+    }
+
+    function forgetPers() {
+      
+      pe.forgetPerson(); 
+    }
+
+    function goToRegistr() {
+      window.location = './index.html';
+    }
+  </script>
+
+</body>
+</html>
