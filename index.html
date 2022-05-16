@@ -96,7 +96,7 @@
         const formData = new FormData(document.querySelector('.profile-form'));
         const formFirst = formData.get('firstName');
         const formLast = formData.get('lastName');
-        window.dataLayer.push({'first_name': formFirst, 'event': 'update_profile'}, {'last_name': formLast, 'event': 'update_profile'});
+        window.dataLayer.push({'first_name': formFirst, 'last_name': formLast, 'event': 'update_profile'});
         console.log('Updated Profile');
 		      };
 
