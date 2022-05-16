@@ -1,112 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    
-    <!-- GTM Datalayer init -->
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    </script>
-    
-    <!-- Google Tag Manager -->
-      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WRKRQ3R');</script>
-    <!-- End Google Tag Manager -->
-    
-    <title>People WebSDK page with Google Tag Manager</title>
-    
-  </head>
-  <body>
-    
-    <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRKRQ3R"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
-    <h1>People WebSDK test site with Google Tag mngr.</h1>
-    <hr>   
-    
-    <h2>Login form:</h2>
-    <form class="login-form" id="login-form">
-       <div>
-        <label for="email">Provide your email: </label>
-        <input type="text" name="email" id="email" required>
-      </div>
-      <div>
-        <input type="submit" value="Log In">
-      </div>
-    </form>
-    
-    <hr>
-    
-    <h2>Profile update form:</h2>
-    <form class="profile-form" id="profile-form">
-      <div>
-        <label for="firstName">Your first name: </label>
-        <input type="text" name="firstName" id="firstName" required>
-      </div>
-      <div>
-        <label for="lastName">Your Last name: </label>
-        <input type="text" name="lastName" id="lastName" required>
-      </div>
-      <div>
-        <input type="submit" value="Update Profile">
-      </div>
-    </form>
-    
-    <hr>
-    
-    <h2>Send event form (event = purchaseProduct):</h2>
-     <form class="event-form" id="event-form">
-       <div>
-        <label for="product">Product Name: </label>
-        <input type="text" name="product" id="product" required>
-      </div>
-       <div>
-        <label for="product_qty">Quantity: </label>
-        <input type="text" name="product_qty" id="product_qty" required>
-      </div>
-      <div>
-        <input type="submit" value="Send Event">
-      </div>
-    </form>
-    
-     <script>
-      const onLoginFormSubmit = (evt) => {
-        evt.preventDefault();
-        const formData = new FormData(document.querySelector('.login-form'));
-        const formEmail = formData.get('email');
-        window.dataLayer.push({'person_email': formEmail, 'event': 'login'});
-        console.log('Logged In');
-      };
-       
-      const onSendClick = (evt) => {
-        evt.preventDefault();
-        const formData = new FormData(document.querySelector('.event-form'));
-        const formProduct = formData.get('product');
-        const formProductQty = formData.get('product_qty');
-        window.dataLayer.push({'product_name': formProduct, 'event': 'purchase'}, {'product_qty': formProductQty, 'event': 'purchase'});
-        console.log('Product Purchased');
-      };
-       
-       const onUpdateClick = (evt) => {
-        evt.preventDefault();
-        const formData = new FormData(document.querySelector('.profile-form'));
-        const formFirst = formData.get('firstName');
-        const formLast = formData.get('lastName');
-        window.dataLayer.push({'first_name': formFirst, 'event': 'update_profile'}, {'last_name': formLast, 'event': 'update_profile'});
-        console.log('Updated Profile');
+<title>Magic Shop. Register</title>
+
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta content="utf-8" http-equiv="encoding" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="text/javascript" src="utils.js"></script>
+  <script src="../src/load.js"></script>
+
+<script>
+(function(e,t,n,o){e.PeopleEventsObject=o;e[o]=e[o]||{init:function(t){e[o].apiKey=t},
+setPerson:function(t,n){e[o].person=t;e[o].personTtl=n},
+forgetPerson:function(){e[o].toForgetPerson=true},
+track:function(){(e[o].q=e[o].q||[]).push(arguments)},
+updatePerson:function(t){e[o].personToUpdate={person:t}},
+appendToList:function(t,n){e[o].attributeToAppend={attributeName:t,attribute:n}}};
+var r=t.createElement("script");
+var s=t.getElementsByTagName("script")[0];r.async=1;r.src=n;s.parentNode.insertBefore(r,s)})
+(window,document,'https://s3.eu-central-1.amazonaws.com/portal-cdn-production/people-events-sdk/pe.latest-2.js','pe');
+
+pe.init('b87807b4a434e95c189d648341974633-d99fcb28-b9c2-41f6-a504-8d8674fb0a3a');
+
+  //IO lib:    https://s3.eu-central-1.amazonaws.com/portal-cdn-io/people-events-sdk/pe.latest-2.js","pe");
+
+  ///IO all_products_kp_io  pe.init('daed23af72e50871b3874451f6e3d872-14439fd4-6340-4d2d-b4f9-936c694346a9');
+  //PROD all_products_kp
+  //pe.init('2402de29a04dc00a793e7967dbed0ef6-9efde785-4fde-480f-b232-bf922d32f8c7');
+
+  
+</script>
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="fake-counter"></div>
+    <h1>Magic shop</h1>
+    <div class="counter" id="counter"></div>
+  </header>
+  <article class="register-content" id="registration">
+    <div class="field-container">
+      <div class="field">First name:</div>
+      <input class="input" id="firstName" />
+    </div>
+    <div class="field-container">
+      <div class="field">Last name:</div>
+      <input class="input" id="lastName" />
+    </div>
+    <div class="field-container">
+      <div class="field">Email:</div>
+      <input class="input" id="email" />
+    </div>
+    <div class="field-container">
+      <div class="field">Phone:</div>
+      <input class="input" id="phone" />
+    </div>
+    <div class="field-container">
+      <div class="field">Push registration Id:</div>
+      <input class="input" id="pushregid" />
+    </div>
+    <button class="button-register" onclick="register()" type="button">Register</button>
+    <button  class="button-register" onclick="goToShopping()" type="button">
+        Go to Shopping
+      </button>
+  </article>
+  
+  <script>
+
+    async function register() {
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const pushregid = document.getElementById('pushregid').value;
+
+      const person = {
+        firstName,
+        lastName,
+        email,
+        phone,
+        pushregid,
       };
 
-      const loginForm = document.querySelector('.login-form');
-      loginForm.addEventListener('submit', onLoginFormSubmit);
-      const profileForm = document.querySelector('.profile-form');
-      profileForm.addEventListener('submit', onUpdateClick);
-      const eventForm = document.querySelector('.event-form');
-      eventForm.addEventListener('submit', onSendClick);
-    </script>
-   
-  </body>
+      //localStorage.setItem('person', JSON.stringify(person));
+      //pe.setPerson({ email: person.email });
+      //pe.setPerson({ phone: person.phone });
+      //pe.setPerson({ pushRegId: person.pushregid }); 
+
+      await pe.setPerson({ phone: person.phone }, 2400)
+      await pe.track('Registration', { email: person.email, phone: person.phone});
+      await pe.updatePerson({ firstName: person.firstName, lastName: person.lastName, contactInformation: {phone: [{number: person.phone}], email: [{address: person.email}]}
+    }); 
+        
+      };
+
+      //pe.updatePerson({ firstName: person.firstName, lastName: person.lastName, "contactInformation": {phone: [{number: person.phone}]} }); 
+
+
+    function goToShopping() {
+     //pe.setPerson({ email: person.email }, 2400).then(() => {
+        window.location = './shop.html';
+     // })
+    }
+
+  </script>
+</body>
 </html>
