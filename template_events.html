@@ -98,7 +98,7 @@
         const formItem1 = formData.get('itemId1');
         const formAmount1 = formData.get('amount1');
         const formPrice1 = formData.get('price1');
-        window.dataLayer.push({'event': 'addedToCart', 'itemId': 'formItem1', 'amount': 'formAmount1','price': 'formPrice1'});
+        window.dataLayer.push({'itemId': formItem1, 'amount': formAmount1,'price': formPrice1, 'event': 'addedToCart'});
         console.log('Added to cart');
       };
        
