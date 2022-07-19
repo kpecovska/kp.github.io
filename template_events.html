@@ -37,15 +37,15 @@
     <form class="added-to-cart">
        <div>
         <label align="right" for="itemId1">Item Id [text]: </label>
-        <input type="text" id="itemId1" required>
+        <input type="text" name="itemId1" required>
       </div>
       <div>
-        <label align="right" for="amount1">Amount [number]: </label>
-        <input type="number" id="amount1" min="1" required>
+        <label align="right" for="amount1">Amount [number > 0]: </label>
+        <input type="number" name="amount1" min="1" required>
       </div>
        <div>
-        <label align="right" for="price1">Price [number]: </label>
-        <input type="number" id="price1" required>
+        <label align="right" for="price1">Price [positive number up tp 100 000 000]: </label>
+        <input type="number" name="price1" min="1" max="100000000" required>
       </div>
       <div>
         <input type="submit" value="addedToChartSubmit">
