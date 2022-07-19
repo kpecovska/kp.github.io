@@ -15,7 +15,7 @@
       })(window,document,'script','dataLayer','GTM-WRKRQ3R');</script>
     <!-- End Google Tag Manager -->
     
-    <title>Template events page</title>
+    <title>Template events test page</title>
 
     <script>
 
@@ -28,22 +28,24 @@
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     !-- End Google Tag Manager (noscript) -->
     
-    <h1>Send Template events:</h1>
+    <h1>Template events test page</h1>
+    <h2>Send any template event:</h2>
+    
     <hr>   
     
-    <h2>Added to chart event:</h2>
-    <form class="added-to-chart">
+    <h2>Added to cart event:</h2>
+    <form class="added-to-cart">
        <div>
-        <label for="itemId1">Item Id [text]: </label>
-        <input type="text" name="itemId1" required>
+        <label align="right" for="itemId1">Item Id [text]: </label>
+        <input type="text" id="itemId1" required>
       </div>
       <div>
-        <label for="amount1">Amount [number]: </label>
-        <input type="number" name="amount1" required>
+        <label align="right" for="amount1">Amount [number]: </label>
+        <input type="number" id="amount1" min="1" required>
       </div>
        <div>
-        <label for="price1">Price [number]: </label>
-        <input type="number" name="price1" required>
+        <label align="right" for="price1">Price [number]: </label>
+        <input type="number" id="price1" required>
       </div>
       <div>
         <input type="submit" value="addedToChartSubmit">
@@ -53,13 +55,13 @@
     <hr>
     
     <h2>Added to Favourites: --- TBD</h2>
-    <form class="profile-form">
+    <form class="added-to-favourites">
       <div>
-        <label for="property">Your first name: </label>
-        <input type="text" name="property" id="property" required>
+        <label align="right" for="itemId2">Item Id [text]: </label>
+        <input type="text" id="property" required>
       </div>
       <div>
-        <label for="lastName">Your Last name: </label>
+        <label align="right" for="lastName">Your Last name: </label>
         <input type="text" lastName="property" id="lastName" required>
       </div>
       <div>
@@ -86,16 +88,18 @@
     
         <hr>
     <button  class="button-register" onclick="goToWebSDK()" type="button">
-       Go to People Web SDK test page
+       Go to Login page
     </button>
 
      <script>
-      const onLoginFormSubmit = (evt) => {
+      const onAddedToCartSubmit = (evt) => {
         evt.preventDefault();
-        const formData = new FormData(document.querySelector('.login-form'));
-        const formEmail = formData.get('email');
-        window.dataLayer.push({'user_id': formEmail, 'event': 'login'});
-        console.log('Logged In');
+        const formData = new FormData(document.querySelector('.added-to-cart'));
+        const formItem1 = formData.get('itemId1');
+        const formAmount1 = formData.get('amount1');
+        const formPrice1 = formData.get('price1');
+        window.dataLayer.push({'event': 'addedToCart', 'itemId': 'formItem1', 'amount': 'formAmount1','price': 'formPrice1'});
+        console.log('Added to cart');
       };
        
       const onSendClick = (evt) => {
@@ -123,6 +127,8 @@
 
          function goToWebSDK() {
         window.location = './index.html';
+         }
+       
     </script>
     
    
