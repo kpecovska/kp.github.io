@@ -82,6 +82,12 @@
         </div>
     </form>
 
+    <hr>
+	  
+    <button  class="button-register" onclick="goToWebSDK()" type="button">
+       Go to Template Events test page
+    </button>
+	  
      <script>
       const onLoginFormSubmit = (evt) => {
         evt.preventDefault();
@@ -120,6 +126,10 @@
       eventForm.addEventListener('submit', onSendClick);
 	const forgetForm = document.querySelector('.forget-form');
       eventForm.addEventListener('submit', onForgetClick);
+	     
+	function goToTemplateEvents() {
+        window.location = './template_events.html';
+      }
 	     
     </script>
 
