@@ -42,15 +42,15 @@
 
     <form class="added-to-cart-form">
       <p>
-        <label align="right" for="itemId1">Item Id [text]: </label>
+        <label for="itemId1">Item Id [text]: </label>
         <input type="text" name="itemId1" required>
       </p>
       <p>
-        <label align="right" for="amount1">Amount [number]: </label>
+        <label for="amount1">Amount [number]: </label>
         <input type="number" name="amount1" min="1" required>
       </p>
        <p>
-        <label align="right" for="price1">Price [number]: </label>
+        <label for="price1">Price [number]: </label>
         <input type="number" name="price1" required>
       </p>
       <p>
@@ -61,9 +61,9 @@
     <hr>
     
     <h2>  2. Added to Favourites event: </h2>
-    <form class="added-to-favourites-form">
+    <form class="added-to-favourites-for">
       <p>
-        <label align="right" for="itemId2">Item Id [text]: </label>
+        <label for="itemId2">Item Id [text]: </label>
         <input type="text" name="itemId2" required>
       </p>
       <p>
@@ -76,19 +76,19 @@
     <h2>  3. Item Purchased event: </h2>
      <form class="item-purchased-form">
       <p>
-        <label align="right" for="itemId3">Item Id [text]: </label>
+        <label for="itemId3">Item Id [text]: </label>
         <input type="text" name="itemId3" required>
       </p>
       <p>
-        <label align="right" for="amount3">Amount [number]: </label>
+        <label for="amount3">Amount [number]: </label>
         <input type="number" name="amount3" min="1" required>
       </p>
       <p>
-        <label align="right" for="price3">Price [number]: </label>
+        <label for="price3">Price [number]: </label>
         <input type="number" name="price3" required>
       </p>
       <p>
-        <label align="right" for="profit">Profit [number]: </label>
+        <label for="profit">Profit [number]: </label>
         <input type="number" name="profit" required>
       </p>
       <p>
@@ -101,11 +101,11 @@
     <h2>  4. Item Viewed event: </h2>
      <form class="item-viewed-form">
       <p>
-        <label align="right" for="itemId4">Item Id [text]: </label>
+        <label for="itemId4">Item Id [text]: </label>
         <input type="text" name="itemId4" required>
       </p>
       <p>
-        <label align="right" for="duration">Duration [number]: </label>
+        <label for="duration">Duration [number]: </label>
         <input type="number" name="duration" required>
       </p>
       <p>
@@ -118,11 +118,11 @@
     <h2>  5. Rating Added event: </h2>
      <form class="rating-added-form">
       <p>
-        <label align="right" for="itemId5">Item Id [text]: </label>
+        <label for="itemId5">Item Id [text]: </label>
         <input type="text" name="itemId5" required>
       </p>
       <p>
-        <label align="right" for="rating">Rating [number between <-1, 1>]: </label>
+        <label for="rating">Rating [number between <-1, 1>]: </label>
         <input type="number" name="rating" required>
       </p>
       <p>
@@ -135,11 +135,11 @@
     <h2>  6. View Portion Set event: </h2>
      <form class="view-portion-set-form">
       <p>
-        <label align="right" for="itemId6">Item Id [text]: </label>
+        <label for="itemId6">Item Id [text]: </label>
         <input type="text" name="itemId6" required>
       </p>
       <p>
-        <label align="right" for="portion">Portion [number <0, 1> nothing/all viewed]: </label>
+        <label for="portion">Portion [number <0, 1> nothing/all viewed]: </label>
         <input type="number" name="portion" required>
       </p>
       <p>
@@ -220,7 +220,7 @@
       const addedToCartForm = document.querySelector('.added-to-cart-form');
       addedToCartForm.addEventListener('submit', onAddedToCartSubmit);
       const addedToFavForm = document.querySelector('.added-to-favourites-form');
-      addedToFavForm.addEventListener('submit', onAddedToFavouriteSubmit);
+      addedToFavForm.addEventListener('submit', onAddedToFavouritesSubmit);
       const itemPurchasedForm = document.querySelector('.item-purchased-form');
       itemPurchasedForm.addEventListener('submit', onItemPurchasedSubmit);
       const itemViewedForm = document.querySelector('.item-viewed-form');
