@@ -4,7 +4,7 @@
     <style>
         form  { display: table;      }
         p     { display: table-row;  }
-        label { display: table-cell; align: right }
+        label { display: table-cell; text-align: right; }
         input { display: table-cell; }
     </style>
     <!-- GTM Datalayer init-->
@@ -139,11 +139,11 @@
         <input type="text" name="itemId6" required>
       </p>
       <p>
-        <label align="right" for="portion">Portion [number between <0, 1> nothing/all viewed]: </label>
+        <label align="right" for="portion">Portion [number <0, 1> nothing/all viewed]: </label>
         <input type="number" name="portion" required>
       </p>
       <p>
-        <label align="right" for="sessionId">SessionId [text]: </label>
+        <label for="sessionId">SessionId [text]: </label>
         <input type="text" name="sessionId" required>
       </p>
       <p>
@@ -217,9 +217,9 @@
         console.log('View portion set');
       };
 
-      const addedToCartForm = document.querySelector('.added-to-cart');
+      const addedToCartForm = document.querySelector('.added-to-cart-form');
       addedToCartForm.addEventListener('submit', onAddedToCartSubmit);
-      const addedToFavForm = document.querySelector('.added-to-favourites');
+      const addedToFavForm = document.querySelector('.added-to-favourites-form');
       addedToFavForm.addEventListener('submit', onAddedToFavouriteSubmit);
       const itemPurchasedForm = document.querySelector('.item-purchased-form');
       itemPurchasedForm.addEventListener('submit', onItemPurchasedSubmit);
