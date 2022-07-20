@@ -139,7 +139,7 @@
         <input type="text" name="itemId6" required>
       </p>
       <p>
-        <label for="portion">Portion [number <0, 1> nothing/all viewed]: </label>
+        <label for="portion">Portion [number in <0, 1> nothing/all viewed]: </label>
         <input type="number" name="portion" required>
       </p>
       <p>
@@ -227,7 +227,7 @@
       itemViewedForm.addEventListener('submit', onItemViewedSubmit);
       const ratingAddedForm = document.querySelector('.rating-added-form');
       ratingAddedForm.addEventListener('submit', onRatingAddedSubmit);
-      const viewPortionSetForm = document.querySelector('.vew-portion-set-form');
+      const viewPortionSetForm = document.querySelector('.view-portion-set-form');
       viewPortionSetForm.addEventListener('submit', onViewPortionSetSubmit);
 
          function goToWebSDK() {
