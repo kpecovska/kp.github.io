@@ -4,7 +4,7 @@
     <style>
         form  { display: table;      }
         p     { display: table-row;  }
-        label { display: table-cell; }
+        label { display: table-cell; align: right }
         input { display: table-cell; }
     </style>
     <!-- GTM Datalayer init-->
@@ -50,7 +50,7 @@
         <input type="number" name="amount1" min="1" required>
       </p>
        <p>
-        <label align="right" for="price1">Price [number]: </label>
+        <label for="price1">Price [number]: </label>
         <input type="number" name="price1" required>
       </p>
       <p>
@@ -62,93 +62,93 @@
     
     <h2>  2. Added to Favourites event: </h2>
     <form class="added-to-favourites-form">
-      <div>
+      <p>
         <label for="itemId2">Item Id [text]: </label>
         <input type="text" name="itemId2" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <input type="submit" value="added To Favourites Submit">
-      </div>
+      </p>
     </form>
     
     <hr>
     
     <h2>  3. Item Purchased event: </h2>
      <form class="item-purchased-form">
-      <div>
+      <p>
         <label for="itemId3">Item Id [text]: </label>
         <input type="text" name="itemId3" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <label for="amount3">Amount [number]: </label>
         <input type="number" name="amount3" min="1" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <label align="right" for="price3">Price [number]: </label>
         <input type="number" name="price3" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <label align="right" for="profit">Profit [number]: </label>
         <input type="number" name="profit" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <input type="submit" value="item Purchased Submit">
-      </div>
+      </p>
     </form>
     
         <hr>
     
     <h2>  4. Item Viewed event: </h2>
      <form class="item-viewed-form">
-      <div>
+      <p>
         <label for="itemId4">Item Id [text]: </label>
         <input type="text" name="itemId4" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <label for="duration">Duration [number]: </label>
         <input type="number" name="duration" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <input type="submit" value="item Viewed Submit">
-      </div>
+      </p>
     </form>
     
             <hr>
     
     <h2>  5. Rating Added event: </h2>
      <form class="rating-added-form">
-      <div>
+      <p>
         <label for="itemId5">Item Id [text]: </label>
         <input type="text" name="itemId5" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <label for="rating">Rating [number between <-1, 1>]: </label>
         <input type="number" name="rating" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <input type="submit" value="rating Added Submit">
-      </div>
+      </p>
     </form>
        
                 <hr>
     
     <h2>  6. View Portion Set event: </h2>
      <form class="view-portion-set-form">
-      <div>
+      <p>
         <label for="itemId6">Item Id [text]: </label>
         <input type="text" name="itemId6" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <label for="portion">Portion [number between <0, 1> ... nothing viewed / all viewed]: </label>
         <input type="number" name="portion" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <label for="sessionId">SessionId [text]: </label>
         <input type="text" name="sessionId" required>
-      </div>
-      <div>
+      </p>
+      <p>
         <input type="submit" value="View Portion Set Submit">
-      </div>
+      </p>
     </form>
     
         <hr>
