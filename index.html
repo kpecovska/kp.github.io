@@ -46,7 +46,7 @@
     <hr>   
 
     <h2>Login form: By Email</h2>
-    <form class="login-form" id="login-form">
+    <form class="login-form">
        <div>
         <label for="email">Provide your email: </label>
         <input type="text" name="email" id="email" required>
@@ -59,7 +59,7 @@
     <hr>
 	  
     <h2>Login form: By Push Reg. Id </h2>
-    <form class="login-form-push" id="login-form-push">
+    <form class="login-form-push">
        <div>
         <label for="pushRegId">Provide your Push registration Id: </label>
         <input type="text" name="pushRegId" id="pushRegId" required>
@@ -71,9 +71,8 @@
 
     <hr>
 
-
     <h2>Profile update form:</h2>
-    <form class="profile-form" id="profile-form">
+    <form class="profile-form">
       <div>
         <label for="firstName">Your first name: </label>
         <input type="text" name="firstName" id="firstName" required>
@@ -90,7 +89,7 @@
     <hr>
 
     <h2>Send event form (event = purchaseProduct):</h2>
-     <form class="event-form" id="event-form">
+     <form class="event-form">
        <div>
         <label for="product">Product Name: </label>
         <input type="text" name="product" id="product" required>
@@ -107,7 +106,7 @@
     <hr>
 
     <h2>Forget person</h2>
-     <form class="forget-form" id="forget-form">
+     <form class="forget-form">
 	<div>
          <input type="submit" value="Forget Session">
         </div>
@@ -132,8 +131,8 @@
 
       const onLoginFormPushSubmit = (evt) => {
         evt.preventDefault();
-        const formData = new FormData(document.querySelector('.login-form-push'));
-        const formPushRegId = formData.get('pushRegId');
+        const formDataPush = new FormData(document.querySelector('.login-form-push'));
+        const formPushRegId = formDataPush.get('pushRegId');
         window.dataLayer.push({'person_pushRegId': formPushRegId, 'event': 'loginPushRegId'});
         console.log('Logged In with Push Reg. Id');
       };
