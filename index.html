@@ -16,6 +16,23 @@
     <!-- End Google Tag Manager -->
 
     <title>People WebSDK page with Google Tag Manager</title>
+	  
+   <script>
+	//this is for Web Push
+     (function(I,n,f,o,b,i,p){
+     I[b]=I[b]||function(){(I[b].q=I[b].q||[]).push(arguments)};
+     I[b].t=1*new Date();i=n.createElement(f);i.async=1;i.src=o;
+     p=n.getElementsByTagName(f)[0];p.parentNode.insertBefore(i,p)})
+     (window,document,'script','https://webpush.infobip.com/bundle-latest.js','infobipWebPush');
+
+     infobipWebPush('init', {
+       applicationCode: 'e620ef195de6d62670c39d9ea6aa1a29-c5b6f553-5b93-4e4d-9162-f84bcf77fd66',
+       vapidPublicKey: 'BBKAfE0JifGYsMyta5toQ48TaC9W4Snnh9TtkSKqE0-XSzlW2Px7D8qEXnA-OSEGIbcgWI3YQKClF9LAfEl2T9o=',
+       optIn: {
+         autostart: true,
+       },
+     });
+   </script>	  
 
   </head>
   <body>
