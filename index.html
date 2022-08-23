@@ -45,7 +45,7 @@
     <h1>People WebSDK test site with Google Tag mngr.</h1>
     <hr>   
 
-    <h2>Login form:</h2>
+    <h2>Login form: By Email</h2>
     <form class="login-form" id="login-form">
        <div>
         <label for="email">Provide your email: </label>
@@ -57,6 +57,20 @@
     </form>
 
     <hr>
+	  
+    <h2>Login form: By Push Reg. Id </h2>
+    <form class="login-form" id="login-form-push">
+       <div>
+        <label for="pushRegId">Provide your Push registration Id: </label>
+        <input type="text" name="pushRegId" id="pushRegId" required>
+      </div>
+      <div>
+        <input type="submit" value="Log In Push">
+      </div>
+    </form>
+
+    <hr>
+
 
     <h2>Profile update form:</h2>
     <form class="profile-form" id="profile-form">
@@ -116,6 +130,14 @@
         console.log('Logged In');
       };
 
+      const onLoginFormPushSubmit = (evt) => {
+        evt.preventDefault();
+        const formData = new FormData(document.querySelector('.login-form-push'));
+        const formPushRegId = formData.get('pushRegId');
+        window.dataLayer.push({'person_pushRegId': formPushRegId, 'event': 'loginPushRegId'});
+        console.log('Logged In with Push Reg. Id');
+      };
+	     
       const onSendClick = (evt) => {
         evt.preventDefault();
         const formData = new FormData(document.querySelector('.event-form'));
@@ -137,11 +159,13 @@
 	const onForgetClick = (evt) => {
 		     };
 
-      const loginForm = document.querySelector('.login-form');
+    const loginForm = document.querySelector('.login-form');
       loginForm.addEventListener('submit', onLoginFormSubmit);
-      const profileForm = document.querySelector('.profile-form');
+    const loginFormPush = document.querySelector('.login-form-push');
+      loginFormPush.addEventListener('submit', onLoginFormPushSubmit);
+    const profileForm = document.querySelector('.profile-form');
       profileForm.addEventListener('submit', onUpdateClick);
-      const eventForm = document.querySelector('.event-form');
+    const eventForm = document.querySelector('.event-form');
       eventForm.addEventListener('submit', onSendClick);
 	const forgetForm = document.querySelector('.forget-form');
       eventForm.addEventListener('submit', onForgetClick);
