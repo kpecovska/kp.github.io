@@ -128,6 +128,18 @@
           p=n.getElementsByTagName(f)[0];p.parentNode.insertBefore(i,p)})
       (window,document,'script','https://webpush.infobip.com/bundle-latest.js','infobipWebPush');
 	     
+	infobipWebPush('on', 'permissionChanged', function (perimssion) {
+	    if (permission === 'default') {
+		console.log('default');
+	    } else if (permission === 'granted') {
+		console.log('granted');
+	    } else if (permission === 'denied') {
+		console.log('denied');
+	    }
+	});
+	     
+	     
+	     
       const onLoginFormSubmit = (evt) => {
         evt.preventDefault();
         const formData = new FormData(document.querySelector('.login-form'));
